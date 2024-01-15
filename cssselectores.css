@@ -1,0 +1,49 @@
+.accept {
+    background-color: green;
+    color: white;
+  }
+  .cancel {
+    background-color: red;
+    color: white;
+  }
+
+  .azulinput{
+    background-color: blue;
+    color: white;
+  }
+
+
+  .titulo{
+
+    background-color: aqua;
+  }
+
+  .parrafo1{
+    background-color: antiquewhite;
+  }
+
+  .parrafo2{
+    background-color: blueviolet;
+  }
+
+  .parrafo3{
+    background-color: aqua;
+  }
+
+  .listado{
+    color: red;
+  }
+
+  .h2edit{
+
+    background-color: black;
+    color: white;
+  }
+
+  .negrita{
+    font-weight: bold;
+  }
+
+  .verde{
+    color: green;
+  }

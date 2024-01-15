@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .keyboard {
+            display: flex;
+            align-content: space-between;
+        }
+
+        #keyboard-chart,
+        #keyboard-number {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1em;
+        }
+
+        #keyboard-chart div,
+        #keyboard-number div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2em;
+            padding: 0.1em;
+            font-size: 55px;
+            margin: 0.1em;
+            border-radius: 10%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(5, 26, 27);
+            transition: 0.3s;
+
+        }
+
+        #keyboard-chart .vocal {
+            background-color: rgb(28, 177, 127);
+        }
+
+        #keyboard-chart .normalChar {
+            background-color: rgb(115, 173, 175);
+        }
+
+
+        #keyboard-number .key-even {
+            background-color: rgb(28, 177, 127);
+        }
+
+        #keyboard-number .key-odd {
+            background-color: rgb(119, 178, 180);
+        }
+
+        #keyboard-number .key-3 {
+            background-color: aquamarine;
+        }
+
+        #keyboard-chart div:hover,
+        #keyboard-number div:hover {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+            cursor: pointer;
+        }
+
+        #keyboard-chart div:focus,
+        #keyboard-number div:focus {
+            filter: brightness(1.8);
+            cursor: pointer;
+        }
+
+        
+    </style>
+
+    <title>Ejercicio 2 - Teclado</title>
+</head>
+
+<body onload="init()">
+    <h1 id="titulo">Ejercicio 2 - Teclado</h1>
+
+    <div class="keyboard">
+        <div id="keyboard-chart"></div>
+
+        <div id="keyboard-number"></div>
+    </div>
+
+    <div id="telef"></div>
+
+    <script>
+
+        const ASCII_A = 65;
+        const ASCII_Z = 90;
+
+        function createKeyboardChar() {
+            let content = document.getElementById("keyboard-chart");
+            for (let i = ASCII_A; i <= ASCII_Z; i++) {
+                let keyChar = createKeyChar(i);
+                content.appendChild(keyChar);
+            }
+        }
+
+        function createKeyChar(i) {
+            let keyChar = document.createElement('div');
+            let letter = String.fromCharCode(i);
+            keyChar.textContent = letter;
+            changeColorChar(keyChar, letter);
+            return keyChar;
+        }
+
+        function changeColorChar(keyChar, letter) {
+            keyChar.className = "normalChar";
+            if (letter === "A" || letter === "E" || letter === "I" || letter === "O" || letter === "U") {
+                keyChar.className = "vocal";
+            }
+        }
+
+        function createKeyboardNumber(totalNumbers) {
+            let content = document.getElementById("keyboard-number");
+            for (let i = 1; i <= totalNumbers; i++) {
+                let key = createKey(i);
+                content.appendChild(key);
+            }
+        }
+
+        function createKey(number) {
+            let key = document.createElement('div');
+            changeColor(key, number);
+            key.textContent = number;
+            return key;
+        }
+
+        function changeColor(key, number) {
+            key.className = "key-odd";
+            if (number % 2 === 0) {
+                key.className = "key-even";
+            } else if (number % 3 === 0) {
+                key.className = "key-3";
+            } 
+        }
+
+        function init() {
+            let totalNumbers = 9;
+            createKeyboardNumber(totalNumbers);
+            createKeyboardChar();
+        }
+
+
+    </script>
+</body>
+
+</html>

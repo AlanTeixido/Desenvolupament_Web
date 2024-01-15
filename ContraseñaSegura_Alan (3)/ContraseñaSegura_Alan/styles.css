@@ -1,0 +1,99 @@
+/* Estilos globales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    /* Tipo de fuente para el cuerpo del documento */
+    background-color: #f4f4f4;
+    /* Color de fondo gris claro */
+    margin: 0;
+    /* Elimina los márgenes predeterminados del cuerpo del documento */
+    display: flex;
+    /* Utiliza el modelo de caja flexible para el diseño */
+    align-items: center;
+    /* Centra verticalmente los elementos hijos */
+    justify-content: center;
+    /* Centra horizontalmente los elementos hijos */
+    height: 100vh;
+    /* Establece la altura del cuerpo al 100% de la altura visible del viewport */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+    background-color: #fff;
+    /* Color de fondo blanco */
+    padding: 20px;
+    /* Relleno interno de 20 píxeles */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra con un poco de borde difuso */
+}
+
+/* Estilos para el encabezado principal */
+h1 {
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    color: #333;
+    /* Color del texto principal */
+}
+
+/* Estilos para las etiquetas de formulario */
+label {
+    display: block;
+    /* Muestra las etiquetas como bloques para separar visualmente */
+    margin-bottom: 10px;
+    /* Márgenes inferiores para separar las etiquetas */
+}
+
+/* Estilos para los campos de entrada de texto */
+input {
+    width: 100%;
+    /* Ancho del campo de entrada al 100% del contenedor */
+    padding: 8px;
+    /* Relleno interno de 8 píxeles */
+    margin-bottom: 15px;
+    /* Márgenes inferiores para separar los campos de entrada */
+    box-sizing: border-box;
+    /* Incluye el relleno y el borde en el ancho total */
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #4caf50;
+    /* Color de fondo verde */
+    color: white;
+    /* Color del texto blanco */
+    padding: 10px;
+    /* Relleno interno de 10 píxeles */
+    border: none;
+    /* Sin borde */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilos para el botón al pasar el cursor sobre él */
+button:hover {
+    background-color: #45a049;
+    /* Cambia el color de fondo al pasar el cursor */
+}
+
+/* Estilos para los párrafos */
+p {
+    margin-top: 15px;
+    /* Márgenes superiores para separar los párrafos */
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    font-weight: bold;
+    /* Texto en negrita */
+}
+
+/* Nueva regla para agregar margen entre líneas en el mensaje de error */
+p br {
+    display: block;
+    /* Muestra el salto de línea como bloque */
+    margin-top: 5px;
+    /* Márgenes superiores para separar las líneas */
+    content: "";
+    /* Evita la herencia de estilos del tema del navegador */
+}

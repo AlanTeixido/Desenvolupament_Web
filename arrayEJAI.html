@@ -1,0 +1,133 @@
+<!DOCTYPE html
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"="width=devicewidth, initial-=1.0" />
+    <title>Arrays EJ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arrays EJ</h1>
+    <p>
+      This page contains three JavaScript functions that perform various operations on arrays.
+    </p>
+    <h2>Sumar pares</h2>
+    <p>
+      The <code>sumarPares</code> function takes an array of numbers as input and returns the sum of all even numbers in the array.
+    </p>
+    <pre><code>sumarPares([2, 4, 5, 6, 7, 8, 3, 1, 10, 4]);</code></pre>
+    <div id="sumaParesResult" class="result"></div>
+    <h2>Ordenar alumno</h2>
+    <p>
+      The <code>ordenarAlumno</code> function takes an array of strings and numbers as input and returns a new array with the first element being the name (popped from the original array), the last element being the average of all the numeric values in the array (calculated by summing all numeric values and dividing by the number of such values), and the rest of the elements being the original elements in their original order.
+    </p>
+    <pre><code>ordenarAlumno(["Rodriguez", "8", 9, "5", 4, "Clara"]);</code></pre>
+    <div id="ordenarAlumnoResult" class="result"></div>
+    <h2>Eliminar Z</h2>
+    <p>
+      The <code>eliminarZ</code> function takes an array of strings as input and returns a new array containing all elements of the original array that do not start with the letter "Z".
+    </p>
+    <pre><code>eliminarZ(["Bob", "Alex", "Zoello"]);</code></pre>
+    <div id="eliminarZResult" class="result"></div>
+    <script>
+      // Define the init function in the global scope
+      function init() {
+        // Get the result elements by ID
+        const sumaParesResult = document.getElementById("sumaParesResult");
+        const ordenarAlumnoResult = document.getElementById("ordenarAlumnoResult");
+        const eliminarZResult = document.getElementById("eliminarZResult");
+
+        // Call the functions and display the results
+        sumaParesResult.textContent = sumarPares([2, 4, 5, 6, 7, 8, 3, 1, 10, 4]);
+        ordenarAlumnoResult.textContent = JSON.stringify(
+          ordenarAlumno(["Rodriguez", "8", 9, "5", 4, "Clara"]),
+          null,
+          2
+        );
+        eliminarZResult.textContent = JSON.stringify(
+          eliminarZ(["Bob", "Alex", "Zoello"]),
+          null,
+          2
+        );
+      }
+
+      // Use the for loop with a numeric index instead of for...in
+      function sumarPares(lista) {
+        let suma = 0;
+
+        for (let i = 0; i < lista.length; i++) {
+          if (lista[i] % 2 == 0) {
+            suma += lista[i];
+          }
+        }
+
+        return suma;
+      }
+
+      // Add error handling for arrays without numeric values
+      function ordenarAlumno(array) {
+        if (!array.some(isFinite)) {
+          throw new Error("Array does not contain any numeric values");
+        }
+
+        let nombre = array.shift();
+
+        let suma = 0;
+        let contadorNotas = 0;
+
+        for (let i = 0; i < array.length; i++) {
+          const valor = parseFloat(array[i]);
+          if (!isNaN(valor)) {
+            suma += valor;
+            contadorNotas++;
+          }
+        }
+
+        const notaMedia = (suma / contadorNotas).toFixed(1);
+
+        array.push(notaMedia);
+
+        return [nombre, ...array];
+      }
+
+      // Use the filter method instead of creating a new array
+      function eliminarZ(array2) {
+        return array2.filter(element => !element.startsWith("Z"));
+      }
+
+      // Call the init function directly instead of using onload
+      init();
+    </script>
+  </body>
+</html>

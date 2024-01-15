@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 2 - Teclado alfabético</title>
+    <style>
+        .tecla {
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            margin: 10px;
+            color: white;
+            font-size: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vocal {
+            background-color: green;
+        }
+
+        #contenedor {
+            width: 370px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body onload="init();">
+    <h1 id="titulo">Ejercicio 2 - Teclado alfabético</h1>
+    <div id="contenedor"></div>
+
+    <script>
+        function crearTecla(letra) {
+            let elementoNuevo = document.createElement('div');
+            elementoNuevo.className = 'tecla';
+            elementoNuevo.textContent = letra;
+            
+            // Verifica si la letra es una vocal y aplica el estilo correspondiente
+            if (/[AEIOU]/.test(letra)) {
+                elementoNuevo.classList.add('vocal');
+            }
+            
+            return elementoNuevo;
+        }
+
+        function generaTecla() {
+            let contenedor = document.getElementById("contenedor");
+            for (let i = 65; i <= 90; i++) {
+                let letra = String.fromCharCode(i);
+                let tecla = crearTecla(letra);
+                contenedor.appendChild(tecla);
+            }
+        }
+
+        function init() {
+            generaTecla();
+        }
+    </script>
+</body>
+
+</html>

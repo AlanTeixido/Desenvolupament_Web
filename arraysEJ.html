@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArraysEJ</title>
+  </head>
+  <body onload="init()">
+    <script>
+      function init() {
+        console.log(sumarPares([2, 4, 5, 6, 7, 8, 3, 1, 10, 4]));
+
+        console.log(ordenarAlumno(["Rodriguez", "8", 9, "5", 4, "Clara"]));
+
+        console.log(eliminarZ(["Bob", "Alex", "Zoello"]));
+      }
+
+      function sumarPares(lista) {
+        let suma = 0;
+
+        for (let i in lista) {
+          if (lista[i] % 2 == 0) {
+            suma += lista[i];
+          }
+        }
+
+        return suma;
+      }
+
+      function ordenarAlumno(array) {
+        let nombre = array.pop();
+        array.unshift(nombre);
+
+        let suma = 0;
+        let contadorNotas = 0;
+
+        for (let i = 0; i < array.length; i++) {
+          const valor = parseFloat(array[i]);
+          if (!isNaN(valor)) {
+            suma += valor;
+            contadorNotas++;
+          }
+        }
+
+        const notaMedia = (suma / contadorNotas).toFixed(1);
+
+        array.push(notaMedia);
+
+        return array;
+      }
+
+      // En JavaScript, la función isNaN() devuelve true si el valor proporcionado no es un número, y false si es un número o se puede convertir en uno. 
+      // En el contexto de la función ordenarAlumno, parseFloat(array[i]) convierte el valor del elemento del array en un número de punto flotante.
+
+      function eliminarZ(array2) {
+        const arraySinZ = [];
+
+        for (let i in array2) {
+          if (!array2[i].startsWith("Z")) {
+            arraySinZ.push(array2[i]);
+          }
+        }
+
+        return arraySinZ;
+      }
+    </script>
+  </body>
+</html>

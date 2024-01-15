@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DADOS Alan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //Valor Random del 1 al 6
+        function getRandomInt() {
+            return Math.floor(Math.random() *6)+1;
+        }
+
+        function jugar() {
+            let jugador1 = getRandomInt(1, 6);
+            let jugador1Segunda = getRandomInt(1, 6);
+            let jugador2 = getRandomInt(1, 6);
+            let jugador2Segunda = getRandomInt(1, 6);
+
+            // Calcula las sumas
+            let sumaJugador1 = jugador1 + jugador1Segunda;
+            let sumaJugador2 = jugador2 + jugador2Segunda;
+
+            // Muestra el resultado
+            alert(`Jugador 1: ${jugador1} + ${jugador1Segunda} = ${sumaJugador1} 
+            \n Jugador 2: ${jugador2} + ${jugador2Segunda} = ${sumaJugador2}
+            \n
+            \n${sumaJugador1 > sumaJugador2 ? 
+                '¡Jugador 1 gana!' : (sumaJugador1 < sumaJugador2 ? 
+                '¡Jugador 2 gana!' : 
+                '¡Empate!')}`);
+        }
+    </script>
+
+
+    <h1>Juego de Dados</h1>
+    <p>Haz clic en el botón para lanzar los dados.</p>
+    <button onclick="jugar()">Lanzar Dados</button>
+</body>
+
+</html>

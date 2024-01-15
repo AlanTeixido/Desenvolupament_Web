@@ -1,0 +1,31 @@
+<body>
+    <h1 id="titulo" atributoInventado="valorAtributo">Aprendiendo JavaScript Moderno</h1>
+    <p>Hola Mundo!</p>
+    <p class="importante">Adiós mundo <em>cruel</em></p>
+    <span class="importante">Esto es muy importante</span>
+    <script>
+        let titulo = document.getElementById("titulo");
+        console.log("El titulo de la página es: " + titulo.innerHTML); //Aprendiendo JavaScript Moderno
+        titulo.innerHTML = "Le cambio el titulo";
+        titulo.className="upper";
+        titulo.setAttribute("name","pepe");
+        var parrafos = document.getElementsByTagName("p");
+        console.log(parrafos);
+   
+        //Cambiamos el texto del primer parrafo
+        parrafos[0].innerHTML = "Este mundo ya está muy saludado";
+        //Informamos el id del parrafo segundo
+        parrafos[1].id="identificadorNuevo"
+ 
+        let importante = document.getElementsByClassName("importante");
+        console.log(importante);
+ 
+        for (i = 0; i < importante.length; i++) {
+            importante.item(i).style.backgroundColor = "red";
+            if(importante.item(i).tagName=="SPAN"){
+                importante.item(i).classList.add('blanco');
+                //importante.item(i).style.color="white";
+            }
+        }
+    </script> </body>
+ 

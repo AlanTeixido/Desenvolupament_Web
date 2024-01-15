@@ -1,0 +1,15 @@
+#game-board {
+    border-collapse: collapse;
+}
+
+#game-board td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.color-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

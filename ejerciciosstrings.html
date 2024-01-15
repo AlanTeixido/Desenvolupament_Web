@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function contieneAS() {
+            let frase = prompt("Introduce la frase");
+
+            if (frase.startsWith("As")) {
+                alert(frase + " Sí que contiene AS");
+            } else {
+                alert("No contiene As" + frase);
+            }
+        }
+
+        function cambiarAs() {
+            let frase = prompt("Introduce una frase para cambiar y corregir AS");
+
+            if (frase.includes("AS")) {
+                alert(frase.replace("AS", "As"));
+            } else {
+                alert("No contiene AS");
+            }
+        }
+
+        function retirarCaracter() {
+            let frase = prompt("Introduce la frase");
+            let numero = parseInt(prompt("Introduce un número"));
+
+            if (!isNaN(numero) && numero > 0 && numero < frase.length) {
+                let nuevaFrase = "";
+                for (let i = 0; i < frase.length; i++) {
+                    if (i !== numero) {
+                        nuevaFrase += frase[i];
+                    }
+                }
+                alert(nuevaFrase);
+            } else {
+                alert("Incorrecto");
+            }
+        }
+
+        function intercambiaPrimerYUltimoCaracter() {
+            let frase = prompt("Introduce la frase");
+
+            if (frase.length > 0) {
+                let primerCaracter = frase[0];
+                let ultimoCaracter = frase[frase.length - 1];
+
+                let parteMedia = "";
+                for (let i = 1; i < frase.length - 1; i++) {
+                    parteMedia += frase[i];
+                }
+
+                alert(ultimoCaracter + parteMedia + primerCaracter);
+            } else {
+                alert("La frase está vacía");
+            }
+        }
+    </script>
+
+    <h1>Cambiar AS</h1>
+    <p>Haz clic en el botón para jugar.</p>
+    <button onclick="cambiarAs()">Cambiar As</button>
+
+    <h1>Contiene AS</h1>
+    <p>Haz clic en el botón para jugar.</p>
+    <button onclick="contieneAS()">Contiene As</button>
+
+    <h1>Retirar Caracter</h1>
+    <p>Haz clic en el botón para jugar.</p>
+    <button onclick="retirarCaracter()">Retirar Caracter</button>
+
+    <h1>Intercambiar primer y último caracter</h1>
+    <p>Haz clic en el botón para jugar.</p>
+    <button onclick="intercambiaPrimerYUltimoCaracter()">Intercambiar</button>
+</body>
+
+</html>

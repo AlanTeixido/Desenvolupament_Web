@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body onload="init()">
+    <h1 id="titulo">Arrays</h1>
+
+    <script>
+        function init() {
+            console.log(concatenarArrays(array1, array2));
+        }
+
+        const array1 = ["a", "b", "c"];
+        const array2 = [1, 2, 3];
+
+        function concatenarArrays(a1, a2) {
+            let aR = a1
+
+            for (let i = 0; i < a2.length; i++) {
+                aR.push(a2[i]);
+            }
+
+            return aR;
+        }
+    </script>
+</body>
+
+</html>

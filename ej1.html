@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="h1Hello">Hello World</h1>
+
+    <p id="Lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus recusandae officiis tempora ipsa laudantium dolor aut ipsum quam magnam consectetur distinctio nam ipsam animi explicabo, at obcaecati earum quibusdam dignissimos!</p>
+    <script>
+
+        console.log("Esto es una prueba del log");
+        console.error("Esto es un error");
+        let nombre = prompt("Dime tu nombre");
+        console.log("Tu nombre es " + nombre + " y es muy bonito");
+        let resultado = confirm("¿Es tu nombre " + nombre + "?");
+        console.log("Es usuario ha confirmado su nombre " + resultado);
+
+        let h1Hello = document.getElementById("h1Hello");
+        console.log (h1Hello);
+
+        console.log (Lorem. textContent);
+
+        let titulo = document.getElementById("h1Hello");
+       console.log("El titulo de la página es: " + titulo.innerHTML); 
+       titulo.innerHTML = "Le cambio el titulo";
+       titulo.className="upper";
+
+       h1Hello.style.backgroundColor = 'red';
+       Lorem.style.backgroundColor = 'black';
+       Lorem.style.color = 'white';
+        
+       
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

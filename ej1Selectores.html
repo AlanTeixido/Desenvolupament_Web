@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de DOM</title>
+    <link rel="stylesheet" href="cssselectores.css" />
+  </head>
+
+  <body>
+    <h1 class="important">Ejemplo de DOM</h1>
+    <p>Vamos a ver una página de ejemplo para poder "jugar" con el DOM</p>
+    <article>
+      <h2>Algunos párrafos</h2>
+      <div id="lipsum">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat
+          ex in eleifend finibus. Morbi vulputate iaculis tortor, nec luctus
+          neque consectetur sit amet. Aliquam erat volutpat. Suspendisse auctor
+          ante id est hendrerit aliquam. Sed libero libero, bibendum eget
+          rhoncus ut, consequat eget arcu. Maecenas ac fermentum elit. Integer
+          tempor rutrum erat at dapibus. Duis ornare ornare efficitur.
+          Pellentesque eu nibh id arcu volutpat mollis vitae eget dolor. Donec
+          velit nibh, vestibulum et ante sed, interdum condimentum arcu. Vivamus
+          in purus vitae nunc iaculis venenatis et a neque. Etiam vulputate
+          felis non est aliquam, id ultrices ipsum consequat.
+        </p>
+        <p>
+          Vestibulum facilisis est in fringilla volutpat. Sed sollicitudin odio
+          ac tristique placerat. Sed eleifend feugiat consequat. Vivamus
+          consequat tristique sem non suscipit. Praesent pulvinar pretium
+          blandit. Sed at diam condimentum, faucibus tellus ut, eleifend leo.
+          Nullam sed rhoncus lectus. Maecenas eget ex eleifend, pulvinar lectus
+          ut, bibendum quam. Donec vestibulum interdum mattis.
+        </p>
+        <p>
+          Duis vulputate condimentum massa sit amet pulvinar. Sed sollicitudin
+          mauris in laoreet condimentum. Pellentesque congue mauris libero, in
+          scelerisque leo sodales sed. Phasellus tristique sodales consectetur.
+          Morbi porttitor mattis nibh. Nulla quis eros vitae dolor porttitor
+          placerat ac eu nisl. Proin mattis ultrices tellus, eget pharetra nibh
+          pulvinar quis. In vitae ligula mi. Sed commodo commodo purus, nec
+          dictum neque semper in. Donec molestie libero leo, et hendrerit mauris
+          efficitur eget. Nulla molestie bibendum blandit. Curabitur sed
+          porttitor mi. Sed aliquam felis et lacus pretium consectetur.
+        </p>
+      </div>
+    </article>
+    <article>
+      <h2>Una lista</h2>
+      <ul>
+        <li class="important">
+          Donec sit amet eros id orci suscipit ultricies.
+        </li>
+        <li>Vivamus et nibh accumsan, ultricies nisi vel, viverra nisl.</li>
+        <li class="important">
+          Aenean imperdiet mi non augue tristique, sit amet sagittis nulla
+          ultricies.
+        </li>
+        <li class="important">
+          Nullam vitae risus rutrum quam dapibus viverra.
+        </li>
+      </ul>
+    </article>
+    <article>
+      <h2>Un formulario</h2>
+      <form action="#">
+        <label for="input1"
+          >Dato 1 <input id="input1" type="text" size="20" /><br />
+        </label>
+        <label for="input2"
+          >Dato 2 <input id="input2" type="text" size="20" /><br />
+        </label>
+        <label for="input3"
+          >Dato 3 <input id="input3" type="text" size="20" /><br />
+        </label>
+        <label
+          >Escoge el sexo:<br />
+          <input type="radio" name="sexo" value="H" />Hombre<br />
+          <input type="radio" name="sexo" value="M" />Mujer
+        </label>
+        <p>
+          <input type="button" id="button1" value="Button 1" />
+          <input type="button" id="button2" value="Button 2" />
+        </p>
+      </form>
+    </article>
+
+    <script>
+      let primerParrafo = document.querySelector("#lipsum p:first-child");
+      console.log(primerParrafo.textContent);
+
+      let segundoParrafo = document.querySelector("#lipsum p:nth-child(2)");
+      console.log(segundoParrafo.textContent);
+
+      let ultimoItemLista = document.querySelector("li:last-child");
+      console.log(ultimoItemLista.textContent);
+
+      let labelSexo = document.querySelector("label:nth-child(4)");
+      console.log(labelSexo.textContent);
+
+      // Agregamos un id único a cada parrafo
+      let parrafos = document.querySelectorAll("#lipsum p");
+      let contador = 1;
+      for (let parrafo of parrafos) {
+        parrafo.id = "p" + contador;
+        contador++;
+      }
+
+      // Modificamos los atributos de los botones
+      let botonAceptar = document.querySelector("#button1");
+      botonAceptar.className = "accept";
+      botonAceptar.value = "Aceptar";
+
+      let botonCancelar = document.querySelector("#button2");
+      botonCancelar.className = "cancel";
+      botonCancelar.value = "Cancelar";
+
+      // Modificamos el label de input2 para que se vea en azul
+
+      let input2azul = document.querySelectorAll("#input2");
+      input2azul[0].style.color = "blue";
+
+      //Crea varias clases en CSS y asigna una para cada párrafo.
+      let parrafo1 = document.querySelector("#p1");
+      parrafo1.classList.add("parrafo1");
+
+      let parrafo2 = document.querySelector("#p2");
+      parrafo2.classList.add("parrafo2");
+
+      let parrafo3 = document.querySelector("#p3");
+      parrafo3.classList.add("parrafo3");
+      // Crea la clase important y otra listado y añade esta última a todos <li>
+      let listaItems = document.querySelectorAll("li");
+      listaItems.forEach((item) => {
+        item.classList.add("listado");
+      });
+
+      // Crea la clase que subraye, otra que ponga negrita y otra que ponga color verde.
+      // Asigna a los h2 que consideres.
+      let todosH2 = document.querySelectorAll("h2");
+        todosH2[0].classList.add("h2edit");
+        todosH2[1].classList.add("negrita");
+        todosH2[2].classList.add("verde");
+      
+
+      // Elimina del h1 la clase important y ponle la de titulo
+      let titulo = document.querySelector("h1");
+      element.classList.replace("important", "titulo");
+    </script>
+  </body>
+</html>
+
+

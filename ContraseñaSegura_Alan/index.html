@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contraseña segura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contraseña segura</h1>
+        <label for="password">Introduce una contraseña:</label>
+        <input type="password" id="password" name="password" oninput="checkPassword()">
+        <button onclick="checkPassword()">Comprobar</button>
+        <p id="result"></p>
+        <p id="printResult"></p> <!-- Añade este elemento para mostrar la contraseña -->
+    </div>
+    <script src="PO1.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .teclaNumero {
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            margin: 10px;
+            color: white;
+            font-size: 5rem;
+        }
+
+        #contenedor {
+            width: 370px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    <title>Ejercicio 1 - Teclado númerico</title>
+</head>
+
+<body onload="init();">
+    <h1 id="titulo">Ejercicio 1 - Teclado númerico</h1>
+    <div id="contenedor">
+
+    </div>
+
+    <script>
+        function init() {
+
+            
+            let numeroTotal;
+
+            do {
+                numeroTotal = prompt("Hasta que número quieres tener tu teclado?")
+            } while (numeroTotal > 50);
+            creaTecladoNumerico(numeroTotal);
+        }
+
+
+
+        function creaTecladoNumerico(numeroTotal) {
+            let i = 1;
+            let content = document.getElementById("contenedor");
+            while (numeroTotal > 0) {
+                let tecla = creaTeclaNumerica(i, content);
+                actualizaFondoTecla(tecla, i);
+                i++;
+                numeroTotal--;
+            }
+        }
+
+        function creaTeclaNumerica(numeroTecla, content) {
+
+            let div = document.createElement("div");
+            div.className = "teclaNumero";
+            div.textContent = numeroTecla;
+            content.appendChild(div);
+            return div;
+        }
+
+        function actualizaFondoTecla(div, i) {
+            if ((i % 2) == 0) {
+                div.style.backgroundColor = "blue";
+            } else if ((i % 3) == 0) {
+                div.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Numéricas</title>
+</head>
+
+<body>
+    <h1>Operaciones Numéricas</h1>
+
+
+    <script>
+
+        function encontrarMayor() {
+            let num;
+            let numMayorContar = null;
+
+            do {
+                num = parseInt(prompt("Introduce un número para buscar el mayor (para acabar introduce 0)"));
+
+                if (!isNaN(num)) {
+                    if (num > numMayorContar) {
+                        numMayorContar = num;
+                    }
+                } else {
+                    return num;
+                }
+
+            } while (num !== 0);
+
+            console.log(`El número mayor es: ${numMayorContar}`);
+        }
+
+        function calcularMulti() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                let resultado = 0;
+
+                if (num2 < 0) {
+                    for (let i = num2; i < 0; i++) {
+                        resultado -= num1;
+                    }
+                } else {
+                    for (let i = 0; i < num2; i++) {
+                        resultado += num1;
+                    }
+                }
+
+                console.log(`La multiplicación de ${num1} y ${num2} es: ${resultado}`);
+            } else {
+                alert("Por favor, introduce números válidos.");
+            }
+        }
+
+        function calcularMulti3() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+            let num3 = parseInt(prompt("Introduce el tercer número:"));
+
+            if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+                let resultado = 0;
+
+                for (let num = 0; num < num2; num++) {
+                    resultado += num1 + num3;
+                }
+
+                console.log(`La multiplicación de ${num1}, ${num2} y ${num3} es: ${resultado}`);
+            } else {
+                alert("Por favor, introduce números válidos.");
+            }
+        }
+
+
+        function mediatresnotas() {
+            let num1 = parseInt(prompt("Introduce el primer número:"));
+            let num2 = parseInt(prompt("Introduce el segundo número:"));
+            let num3 = parseInt(prompt("Introduce el tercer número:"));
+
+            if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+                let media = (num1 + num2 + num3) / 3;
+                return "La media de " + num1 + ", " + num2 + " y " + num3 + " es de " + media.toFixed(1);
+            } else {
+                alert("Por favor, introduce números válidos.");
+            }
+        }
+
+
+        
+
+    </script>
+</body>
+
+</html>
