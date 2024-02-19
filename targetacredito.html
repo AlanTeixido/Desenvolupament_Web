@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Targeta Credito Alan Teixido</title>
+</head>
+<body onload="init()">
+  <article id="article"></article>
+  <script>
+    function init() {
+        imprimir(tarjeta1.informacion());
+        imprimir(tarjeta2.informacion());
+        imprimir(tarjeta3.informacion());
+    }
+
+    let article = document.getElementById("article");
+
+    function imprimir(resultado) {
+      let p = document.createElement("p");
+      article.appendChild(p);
+      p.innerHTML = resultado;
+    }
+
+    class TargetaCredito {
+      nombreBanco;
+      nombrePropietario;
+      #dataCaducidad;
+      #numero;
+      #cvc;
+      #activa;
+
+      constructor(nombreBanco, nombrePropietario, dataCaducidad, numero, cvc) {
+        this.nombreBanco = nombreBanco;
+        this.nombrePropietario = nombrePropietario;
+        this.#dataCaducidad = dataCaducidad;
+        this.#numero = numero;
+        this.#cvc = cvc;
+        this.#activa = false;
+      }
+
+      informacion() {
+        return `Nombre del propietario: ${this.nombrePropietario}, Nombre del banco: ${this.nombreBanco}, Fecha de caducidad: ${this.#dataCaducidad}, Número de tarjeta: ${this.#numero}, CVC: ${this.#cvc}, Estado: ${this.#activa ? 'Activada' : 'Anulada'}`;
+      }
+
+      get nombreBanco() {
+        return this.nombreBanco;
+      }
+
+      set nombreBanco(value) {
+        this.nombreBanco = value;
+      }
+
+      get nombrePropietario() {
+        return this.nombrePropietario;
+      }
+
+      set nombrePropietario(value) {
+        this.nombrePropietario = value;
+      }
+
+      activar() {
+        if (!this.#activa) {
+          this.#activa = true;
+          imprimir("Tarjeta activada.");
+        } else {
+          imprimir("La tarjeta ya está activada.");
+        }
+      }
+
+      anular() {
+        if (this.#activa) {
+          this.#activa = false;
+          imprimir("Tarjeta anulada.");
+        } else {
+          imprimir("La tarjeta ya está anulada.");
+        }
+      }
+
+      pagar(monto) {
+        if (this.#activa) {
+          imprimir(`Se realizó un pago de ${monto} con éxito.`);
+        } else {
+          imprimir("La tarjeta no está activa. No se puede realizar el pago.");
+        }
+      }
+
+      cambiarCvc(nuevoCVC) {
+        this.#cvc = nuevoCVC;
+        imprimir("CVC cambiado con éxito.");
+      }
+
+    }
+
+    var tarjeta1 = new TargetaCredito("A", "Propietario 1", "01/25", "1234567890123456", "123");
+    var tarjeta2 = new TargetaCredito("B", "Propietario 2", "02/26", "9876543210987654", "456");
+    var tarjeta3 = new TargetaCredito("C", "Propietario 3", "03/27", "456789012345678", "678");
+
+  </script>
+</body>
+</html>

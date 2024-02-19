@@ -9,8 +9,20 @@
 <body>
 
     <h1>Mastermind</h1>
-    <table id="game-board">
-    </table>
+    <div id="color-buttons">
+        <button onclick="añadeColor(0)" style="background-color: white;" id="coloresboton"></button>
+        <button onclick="añadeColor(1)" style="background-color: blue;" id="coloresboton"></button>
+        <button onclick="añadeColor(2)" style="background-color: black;" id="coloresboton"></button>
+        <button onclick="añadeColor(3)" style="background-color: green  ;" id="coloresboton"></button>
+        <button onclick="añadeColor(4)" style="background-color: violet ;" id="coloresboton"></button>
+        <button onclick="añadeColor(5)" style="background-color: yellow;" id="coloresboton"></button>
+        <button onclick="añadeColor(6)" style="background-color: orange;" id="coloresboton"></button>
+        <button onclick="añadeColor(7)" style="background-color: red;" id="coloresboton"></button>
+        <button onclick="añadeColor(8)" style="background-color: cyan;" id="coloresboton"></button>
+    </div>
+    <button id="btn-comprobar">Comprobar</button>
+    <div id="mensaje"></div>
+    <div id="game-board"></div>
 
     <script src="mastermindJS.js"></script>
 

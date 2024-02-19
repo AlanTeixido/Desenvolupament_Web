@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAWe1M06UF1 - Ex01</title>
+    <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .code,
+        .result {
+            font-family: 'Courier New', Courier, monospace;
+            color: grey;
+        }
+
+        .result {
+            color: blue;
+        }
+
+        article {
+            border: 1px solid grey;
+            margin: 5px;
+            padding: 2px;
+        }
+
+        .importante {
+            color: red;
+        }
+
+        .puntuacion {
+            font-style: italic;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DAWe Examen de JavaScript</h1>
+    <h2>DAWe1M06-UF1 2023-24</h2>
+    <article>
+        <h2> Entrega</h2>
+        <p>Cambia el nombre de este fichero a <span class="importante">ApellidoNombre.html</span></p>
+    </article>
+    <article>
+        <h2> Problema 0:</h2>
+        <p>Los resultado de todos los ejercicios deben verse en esta página web, debajo del titutlo "Resultado" de cada
+            ejercicio. Haz el procedimiento que permita añadir el resultado de cada problema en el articulo que toca <span class="result">(usa la clase result para que se diferencie del resto) </span>. En caso de no visualizarse los
+            resultados se entenderá que el problema no esta del todo resuelto</p>
+    </article>
+    <article id="problema1">
+        <h2>Problema 1 <span class="puntuacion"> 2 puntos </span></h2>
+
+        <p>
+            Escribe una función que devuelva una secuencia (el índice comienza con 1) de todos los caracteres
+            pares de una cadena.
+            Si la cadena tiene menos de dos caracteres o más de 100 caracteres, la función debería devolver "Cadena
+            inválida".
+        </p>
+
+        <ul>
+            <li class="code">
+
+                posicionesPares("abcdefghijklm") => ["b", "d", "f", "h", "j", "l"]</li>
+
+            <li class="code">
+                posicionesPares("a") –> "cadena inválida"</li>
+        </ul>
+        <h4 id="resultado1">Resultado</h4>
+
+    </article>
+    <article id="problema2">
+        <h2>Problema 2 <span class="puntuacion"> 3 puntos </span></h2>
+
+        <p>Partiendo de dos cadenas c1 y c2 deberás hacer una función que devuelva una nueva cadena con
+            los caracteres que no son comunes en estas dos cadenas.
+
+        </p>
+        <ul>
+            <ul>
+                <li class="code">noComunes("xyab","xzca") => "ybzc"
+    
+                    <ul>
+                        <li>La primera cadena tiene 'yb' que no está en la segunda cadena.</li>
+    
+                        <li>La segunda cadena tiene 'zc' que no está en la primera cadena.</li>
+                    </ul>
+                </li>
+                <br>
+                <li class="code">noComunes("islandia","Lituania") => "sdtu"</li>
+                
+            </ul>
+        </ul>
+        </p>
+        <h4 id="resultado2">Resultado</h4>
+
+    </article>
+    <article id="problema2">
+        <h2>Problema 3 <span class="puntuacion"> 3 puntos </span></h2>
+
+        <p>Codifica una función que recibe el nombre de una ciudad
+            y debe devolver una cadena que muestre cuántas veces
+            aparece cada letra en la cadena mediante el uso de asteriscos (*).
+        </p>
+        <ul>
+            <li class="code">
+                cuentaLetras("Chicago") => "c:**,h:*,i:*,a:*,g:*,o:*"
+            </li>
+        </ul>
+        <p>Como puedes ver, la letra c se muestra solo una vez, pero con 2 asteriscos.
+            La cadena de retorno debe incluir sólo las letras (no los guiones, espacios, apóstrofes, etc.).
+            No debe haber espacios en el resultado y las diferentes letras deben estar separadas por una coma (,)
+            como se ve en el ejemplo anterior.
+        </p>
+        <p>
+            Ten en cuenta que la cadena de retorno debe enumerar las letras en el orden de su primera aparición
+            en la cadena original.
+        </p>
+        <ul>
+            <li class="code">
+                cuentaLetras("Bangkok") –> "b:*,a:*,n:*,g:*,k:**,o:*"
+            </li>
+            <li class="code">
+                cuentaLetras("Las Vegas") –> "l:*,a:**,s:**,v:*,e:*,g:*"
+            </li>
+        </ul>
+        <h4 id="resultado3">Resultado</h4>
+
+
+    </article>
+
+
+    <article id="problema4">
+        <h2>Problema 4 <span class="puntuacion"> 2 puntos </span></h2>
+        <span class="puntuacion"> 2 puntos </span>
+        <p>Escribe una función que calcule cuánto debes dejas de propina, según la cantidad y
+            la calidad del servicio. Considerando que:
+        <ul>
+            <li>Malo: 0%</li>
+            <li>Excaso: ​​5%</li>
+            <li>Bueno: 10%</li>
+            <li>Estupendo: 15%</li>
+            <li>Excelente: 20%</li>
+        </ul>
+        <p>El aviso de servicio no debe distinguir entre mayúsculas y minúsculas. Si se ingresa una calidad no
+            reconocida, debe enviar "Calificación no reconocida". Como eres una buena persona, siempre redondeas a un
+            decimal.</p>
+        <ul>
+            <li class="code">
+                calculaTip(20, "ExceLEnte") --> 4
+            </li>
+            <li class="code">
+                calculaTip(26.95, "bueno") --> 2.7 // 2.695 redondeado a 2.7
+            </li>
+            <li class="code">
+                calculaTip(89, "Malisimo") --> "Calificación no reconocida"
+            </li>
+        </ul>
+
+        <h4 id="resultado4">Resultado</h4>
+
+    </article>
+
+    <script>
+
+        //Problema1
+        function posicionesPares(cadena) {
+            
+
+            if(!cadena.length >2 && !cadena.length < 100){
+                return "Cadena inválida";
+            }else{
+            let resultado = [];
+            let posicion = 1;
+            for (const char of cadena) {
+                if(char % 2 === 0){
+                resultado.push(cadena.at(posicion));
+                posicion += 2
+                }                
+            }
+            return resultado;
+        }
+        }
+        let articulo1 = document.querySelector("#problema1");
+        let parrafo1 = document.createElement("p");
+        articulo1.appendChild(parrafo1);
+        parrafo1.innerHTML = posicionesPares("abcdefghijklm");
+        let parrafo11 = document.createElement("p");
+        articulo11.appendChild(parrafo1);
+        parrafo11.innerHTML = posicionesPares("a");    
+        
+
+
+        //Problema2
+        function noComunes(cadena1, cadena2) {
+            
+            let resultado = " ";
+            for (let element of cadena1) {
+                if (!cadena1.includes(element.toLowerCase()) && !cadena1.includes(element.toUpperCase())) {
+                    resultado += element
+                }
+            }
+            for (let element of cadena2) {
+                if(!cadena2.includes(element.toLowerCase()) && !cadena2.includes(element.toUpperCase())){
+                    resultado += element
+                }
+                
+            }
+
+           return resultado;   
+            }
+ 
+        let articulo2 = document.querySelector("#problema1");
+        let parrafo2 = document.createElement("p");
+        articulo2 = appendChild(parrafo2)
+        parrafo2.innerHTML = noComunes("xyab","xzca");
+        let parrafo22 = document.createElement("p");
+        articulo22.appendChild(parrafo22);
+        parrafo22.innerHTML = noComunes("islandia","Lituania");    
+
+
+        //Problema3
+        function cuentaLetras(ciudad) {
+            let resultado = [];
+            let contador = 0;
+
+            for (let char of cuidad){
+                contador++
+            }
+            
+        }
+        let articulo3 = document.querySelector("#problema1");
+        let parrafo3 = document.createElement("p");
+        articulo3 = appendChild(parrafo2)
+        parrafo3.innerHTML = noComunes("Chicago");
+        let parrafo33 = document.createElement("p");
+        articulo3.appendChild(parrafo22);
+        parrafo33.innerHTML = noComunes("Bangkok");  
+ 
+
+        //Problema4
+        function calculaTip(precio, valoracion) {
+            if (valoracion.toLowerCase() == "malo"){
+                return 0 * precio.toFixed(1);
+            }else if(valoracion.toLowerCase() == "excaso"){
+                return 0.5* precio.toFixed(1)
+            }else if(valoracion.toLowerCase() == "bueno"){
+                return 1* precio.toFixed(1)
+            }else if(valoracion.toLowerCase() == "estupendo"){
+                return 1.5* precio.toFixed(1)
+            }else if(valoracion.toLowerCase() == "excelente"){
+                return 2* precio.toFixed(1)
+                
+            }else{
+                return "Calificación no reconocida"
+            }
+          
+        }
+        let articulo4 = document.querySelector("#problema1");
+        let parrafo4 = document.createElement("p");
+        articulo4 = appendChild(parrafo2)
+        parrafo4.innerHTML = noComunes(20, "ExceLEnte");
+        let parrafo44 = document.createElement("p");
+        articulo4.appendChild(parrafo22);
+        parrafo44.innerHTML = noComunes(89, "Malisimo");
+        let parrafo444 = document.createElement("p");
+        articulo4.appendChild(parrafo22);
+        parrafo44.innerHTML = noComunes(89, "Malisimo");   
+
+
+        
+    </script>
+</body>
+
+</html>

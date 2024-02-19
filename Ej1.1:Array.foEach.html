@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Muestra por pantalla el número mayor del array
+
+      var numbers = [3, 27, 95, 7, 25, 95, 81];
+      let mayor = numbers[0];
+      numbers.forEach(function (numero) {
+        if (numero > mayor) {
+          mayor = numero;
+        }
+      });
+
+      console.log("El número mayor es: " + mayor);
+
+      //   Muestra por pantalla el string más largo.
+
+      var myStrings = [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "reallyLongString",
+        "sixth",
+      ];
+      let masLargo = myStrings[0];
+
+      myStrings.forEach(function (string) {
+        if (string.length > masLargo.length) {
+          masLargo = string;
+        }
+      });
+
+      console.log("El string más largo es: " + masLargo);
+
+      //   Dado un array con los días de la semana obtén todos los días que empiezan por ‘M’
+
+      var arrayDias = [
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado",
+        "Domingo",
+      ];
+      let arrConM = [];
+
+      arrayDias.forEach(function (dia) {
+        if (dia[0] == "M") {
+          arrConM.push(dia);
+        }
+      });
+      console.log(arrConM);
+
+      //   Obtén el primer día que empieza por ‘M’.
+
+      let primerDiaM = arrayDias.find((dia) => dia.startsWith("M"));
+      console.log("Primer dia que empieza por M :" + primerDiaM);
+
+      // Obtén la posición del día que empieza por ‘V’.
+
+      let primerDiaV = arrayDias.find((dia) => dia.startsWith("V"));
+      console.log("Primer dia que empieza por V :" + primerDiaV);
+
+      // Indica si algún día empieza por ‘S’.
+
+      let empiezaS = arrayDias.some((dia) => dia.startsWith("S"));
+      if (empiezaS) console.log("Algun dia empieza por S");
+      else console.log("Ningun dia empieza por S");
+
+      // Indica si todos los días acaban por ‘s’.
+
+      let acabaS = arrayDias.every((dia) => dia.length - 1 == "s");
+      if (acabaS) console.log("Todos acaban con s");
+      else console.log("No todos acaban con s");
+
+      // Dado un array con los meses del año obtén todos los meses que empiezan por una vocal.
+
+      const meses = [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre",
+      ];
+
+      const vocales = ["a", "e", "i", "o", "u"];
+
+      let mesesVocal = [];
+
+      meses.forEach(function (mes) {
+        let primeraLetra = mes.charAt();
+
+        if (vocales.includes(primeraLetra)) {
+          mesesVocal.push(mes);
+        }
+      });
+
+      console.log(mesesVocal);
+
+      notas = [3.4, 7.9, 8.0, 2.5, 5.6, 5.4, 9.0];
+
+      //   Calcula la nota media
+
+      let sumaNotas = notas.reduce((total, nota) => total + nota);
+      let notaMedia = sumaNotas / notas.length;
+
+      console.log(notaMedia);
+
+      // Obtén la primera nota superior a 5
+      let primera5 = notas.find(nota => nota > 5);
+
+      console.log(primera5);
+
+      // Las notas son sobre 10, cambialas a sobre 20.
+
+      let cambio10 = notas.map(nota => nota * 2);
+      console.log(cambio10);
+
+    </script>
+  </body>
+</html>

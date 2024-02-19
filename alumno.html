@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alumnos</title>
+</head>
+<body onload="init()">
+    <article id="article"></article>
+    
+    <script src="alumnos.js"></script>
+
+    <script>
+
+        function init(){
+            const alumnos = JSON.parse(alumnosJSON);
+
+            let table = document.createElement("table");
+            table.border = "1";
+
+            let encabezamiento = ["nombre", "apellidos", "dni"];
+            let encabezamientoFila = document.getElementById("tr");
+            
+        }
+    </script>
+
+</body>
+
+<!-- Partiendo del fichero alumnos.js donde tenemos una variable que contiene un JSON, recorrer el JSON y muestra por pantalla, en una tabla, tres de sus propiedades. -->
+
+</html>

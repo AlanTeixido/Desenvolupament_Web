@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article id="article1"></article>
+
+    <script>
+      let article = document.getElementById("article1");
+
+      function imprimir(resultado) {
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = resultado;
+      }
+
+      
+    </script>
+  </body>
+</html>

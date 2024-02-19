@@ -1,15 +1,12 @@
-#game-board {
-    border-collapse: collapse;
+#game-board .current-row {
+    background-color: white;
 }
 
-#game-board td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+button {
+    background-color: black;
+    color: white;
 }
 
-.color-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+coloresboton {
+    width: 200px;
 }

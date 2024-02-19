@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <article id="article1"></article>
+    <script>
+      let article = document.getElementById("article1");
+      
+      function init (){
+        imprimir(elementosEliminadosLET(numeros));
+        imprimir(comprobarArraysElementos(array1, array2));
+      }
+
+      function imprimir(resultado) {
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = resultado;
+      }
+
+      //Eliminar duplicados de un array utilizando un Set
+      // Crea una función que reciba un array como entrada y devuelva un nuevo array 
+      // con los elementos únicos del array original, es decir, eliminando los elementos duplicados.
+
+      const numeros = [1, 2, 3, 4, 4, 5, 6, 6, 7];
+      function elementosEliminadosLET(numero){
+        return Array.from(new Set(numero));
+      }
+
+
+    //   Comprobar si dos arrays tienen elementos en común utilizando un Set
+    // Crea una función que tome dos arrays como entrada y devuelva true 
+    // si tienen al menos un elemento en común, y false en caso contrario.
+
+    const array1 = [1, 2, 3, 4, 5];
+    const array2 = [4, 5, 6, 7, 8];
+
+    function comprobarArraysElementos (array1, array2) {
+        const arr1 = new Set(array1);
+        const arr2 = new Set(array2);
+
+        for(const elemento of arr1){
+            if(arr2.has(elemento)){
+                return true;
+            }
+        }
+       return false;
+    }
+
+    </script>
+  </body>
+</html>

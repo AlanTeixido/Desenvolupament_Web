@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <article id="article1"></article>
+    <script>
+      function init() {
+        imprimir(tv.getImporte(), 1);
+        mostrarInfo();
+        mostrarJSON();
+      }
+
+      let article = document.getElementById("article1");
+
+      function imprimir(funcion, numEj) {
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        article.appendChild(p1);
+        article.appendChild(p2);
+        p1.innerHTML = "Ejercicio " + numEj;
+        p2.innerHTML = funcion;
+      }
+
+      var tv = new Object();
+
+      tv.nombre = "TV Samsung 42”";
+      tv.categoria = "Televisores";
+      tv.unidades = 4;
+      tv.precio = 345.95;
+
+      tv.getImporte = function () {
+        return (
+          "El valor total de las unidades es de " + this.unidades * this.precio
+        );
+      };
+
+      //   Al objeto tvSamsung añadele iterativamente varias características y que sea al usuario quien indique el valor.
+      // Crea una lista de propiedades que crees que debería tener un televisor y comprueba si tvSamsung las tiene o no. En caso de no tenerlas añadela e inicializarla a undefined.
+      // Muestra en un página HTML toda la información relativa a tvSamsung.
+
+      var propiedadesTelevisor = [
+        "nombre",
+        "categoria",
+        "unidades",
+        "precio",
+        "marca",
+        "resolucion",
+      ];
+
+      propiedadesTelevisor.forEach(function (propiedad) {
+        if (!(propiedad in tv)) {
+          tv[propiedad] = prompt(`Introduce el valor para ${propiedad}:`);
+        }
+      });
+
+      function mostrarInfo() {
+        let numEj = 2;
+        for (let i in tv) {
+          imprimir(i + ";" + tv[i], numEj);
+          numEj++;
+        }
+      }
+
+      //   Obtén el string que corresponde al JSON de tvSamsung.
+      // Haz el proceso inverso y recupera el objeto. Muestra los datos.
+
+      function mostrarJSON() {
+        let jsonTv = JSON.stringify(tv);
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = "JSON de tvSamsung: " + jsonTv;
+
+        let objetoRecuperado = JSON.parse(jsonTv);
+        let p2 = document.createElement("p");
+        article.appendChild(p2);
+        p2.innerHTML = "Objeto recuperado: ";
+        for (let prop in objetoRecuperado) {
+          p2.innerHTML += prop + ": " + objetoRecuperado[prop] + "<br>";
+        }
+      }
+    </script>
+  </body>
+</html>

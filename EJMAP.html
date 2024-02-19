@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <article id="article1"></article>
+    <script>
+      let article = document.getElementById("article1");
+
+      function init() {}
+
+      function imprimir(resultado) {
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = resultado;
+      }
+
+      //   Partiendo de estos dos Arrays, crea una MAP que te permita
+      // guardar la relación de las notas con el módulo.
+
+      const modulos = ["m02", "m03", "m04", "m05", "m06", "m07", "m08", "FOL"];
+      const alumnoNotas = [
+        [8, 9, 4],
+        [9, 10],
+        [6, 8, 10],
+        [4],
+        [8, 4, 7],
+        [],
+        [7, 5, 9, 10],
+        [10],
+      ];
+      function MAPRelacion(modulos, alumnoNotas) {
+        let map = new Map();
+
+        
+      }
+    </script>
+  </body>
+</html>

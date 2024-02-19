@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <article id="article1"></article>
+
+    <script>
+      function init() {
+        imprimir(comprobarArrayString(["hola", "hola", 1]));
+        imprimir(comprobarArrayPares([2, 4]));
+        imprimir(comprobarArrayLongitud(["si", "si", "n"]));
+        imprimir(comprobarElementoPar([1, 5, 7, 8, 3]));
+        imprimir(nuevoArrayLongitud(["hola", "hola2"]));
+        imprimir(arrayMultiplciado([2, 3, 4, 56, "7", 0], 2));
+        imprimir(nuevoArrayZ(["amoz", "zebra", "zologico"]));
+        imprimir(multiplos5([1, 2, 3, 5, 6, 7, 8, 9, 10]));
+        imprimir(primerElemento5([3, 4, 5, 7]));
+        imprimir(ultimoElementoP(["pruebaNo", "spruebaNo", "paco", "Paco"]));
+        imprimir(primerElementoT(["Trampolin", "Tractor", "tirar"]));
+        imprimir(ultimoElementoPar(["2", 4, 6, "9"]));
+        imprimir(sumaTodosElementos([2, 4, 5, "10"]));
+        imprimir(restaPrimeroSegundo([1, 1, 2, 2, 3, 3, 4, 4]));
+        imprimir(restaUltimoPenultimo([5, 10, 15, "20", "25"]));
+      }
+
+      let article = document.getElementById("article1");
+
+      function imprimir(resultado) {
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = resultado;
+      }
+
+      // Función que recibe un array y que comprueba si todos los elementos de
+      // una array son de tipo String. Si es que sí devuelve true en caso contrario false.
+      function comprobarArrayString(array) {
+        for (let elemento of array) {
+          if (typeof elemento !== "string") {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      //Función que recibe un array y que comprueba que todos los elementos de una array son pares.
+      //Si es que sí devuelve true en caso contrario false.
+      function comprobarArrayPares(array) {
+        for (let elemento of array) {
+          if (elemento % 2 !== 0 || isNaN(elemento)) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      //Función que recibe un array y que comprueba si al menos un elemento del array tiene una
+      //longitud mayor que dos. Si es que sí devuelve true en caso contrario false.
+      function comprobarArrayLongitud(array) {
+        for (let elemento of array) {
+          let longitud = 0;
+          for (let char in elemento) {
+            longitud++;
+          }
+          if (longitud > 2) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      //Función que recibe un array y que comprueba si al menos un número es par.
+      //Si es que sí devuelve true en caso contrario false.
+      function comprobarElementoPar(array) {
+        for (let elemento of array) {
+          if (elemento % 2 === 0 && !isNaN(elemento)) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      // Función que recibe un array y que devuelve un nuevo array con la longitud de cada
+      // string que hay dentro del array.
+      function nuevoArrayLongitud(array) {
+        let newArray = [];
+        let index = 0;
+        for (let elemento of array) {
+          let suma = 0;
+          for (let letra in elemento) {
+            suma++;
+          }
+          newArray[index] = suma;
+          index++;
+        }
+        return newArray;
+      }
+
+      // Función que recibe un array y un número y que devuelve
+      // todos los elementos del array multiplicado por dicho número pasado por  parámetro.
+      function arrayMultiplciado(array, numero) {
+        let newArray = [];
+        let index = 0;
+        for (let elemento of array) {
+          elemento = elemento * numero;
+          newArray[index] = elemento;
+          index = index + 1;
+        }
+
+        return newArray;
+      }
+
+      // Función que recibe un array y que devuelve un nuevo array
+      // con solo los elementos que empiezan por Z.
+      function nuevoArrayZ(array) {
+        let cadenaMinusculas = [];
+        let index = 0;
+        for (let elemento of array) {
+          cadenaMinusculas[index] = elemento.toLowerCase();
+          index++;
+        }
+
+        let newArray = [];
+        index = 0;
+
+        for (let elemento of cadenaMinusculas) {
+          if (elemento[0] == "z") {
+            newArray[index] = elemento;
+            index++;
+          }
+        }
+        return newArray;
+      }
+
+      // Función que recibe un array y que
+      // devuelve un nuevo array con solo los elementos que sean múltiplos de 5.
+
+      function multiplos5(array) {
+        let newArray = [];
+        let index = 0;
+
+        for (let elemento of array) {
+          if (array[elemento] % 5 === 0) {
+            newArray[index] = elemento;
+          }
+          index++;
+        }
+        return newArray;
+      }
+
+      // Función que recibe un array y que devuelve
+      // el primer elemento cuyo tamaño sea superior o igual a 5.
+
+      function primerElemento5(array) {
+        for (let elemento in array) {
+          if (array[elemento] >= 5) {
+            return array[elemento];
+          }
+        }
+      }
+
+      // Función que recibe un array y que devuelve el último elemento que empieza por P.
+      function ultimoElementoP(array) {
+        let cadenaMinusculas = [];
+        let index = 0;
+        for (let elemento of array) {
+          cadenaMinusculas[index] = elemento.toLowerCase();
+          index++;
+        }
+
+        let newArray = [];
+        index = 0;
+
+        for (let elemento of cadenaMinusculas) {
+          if (elemento[0] == "p") {
+            newArray[index] = elemento;
+          }
+        }
+        return newArray;
+      }
+
+      //Función que recibe un array y que devuelve la posición del primer elemento que empieza por T.
+      function primerElementoT(array) {
+        let cadenaMinusculas = [];
+        let index = 0;
+        for (let elemento of array) {
+          cadenaMinusculas[index] = elemento.toLowerCase();
+          index++;
+        }
+
+        for (let elemento of cadenaMinusculas) {
+          if (elemento[0] == "t") {
+            return elemento;
+          }
+        }
+      }
+
+      // Función que recibe un array y que devuelve el último elemento par.
+      function ultimoElementoPar(array) {
+        let ultimo = 0;
+        for (let elemento of array) {
+          if (elemento % 2 == 0) {
+            ultimo = elemento;
+          }
+        }
+        return ultimo;
+      }
+
+      //Función que recibe un array y que devuelve la suma de todos sus elementos.
+      function sumaTodosElementos(array) {
+        let suma = 0;
+        for (let elemento in array) {
+          suma++;
+        }
+        return suma;
+      }
+
+      //Función que recibe un array y que devuelve la resta del primer elemento
+      //menos el segundo y así sucesivamente.
+
+      function restaPrimeroSegundo(array) {
+        let resultado = array[0];
+        for (let i = 1; i < array.length; i++) {
+          resultado -= array[i];
+        }
+        return resultado;
+      }
+
+      //   Función que recibe un array y que devuelve la resta del último elemento menos el
+      //   penúltimo y así sucesivamente.
+
+      function restaUltimoPenultimo(array) {
+        let resultado = 0;
+        for (let i = array.length - 1; i >= 0; i--) {
+          resultado -= array[i];
+        }
+        return resultado;
+      }
+    </script>
+  </body>
+</html>

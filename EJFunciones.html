@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <article id="article1"></article>
+
+
+    <script>
+      function init() {
+        imprimir(saludar("Alan","Buenas"))
+        imprimir(calcular(2,3),2)
+        imprimir(calcuarPromedio(5,6,7),7)
+        imprimir(concatenarNombres("Alan","Alicia","David"),4)
+
+      }
+
+      let article = document.getElementById("article1");
+
+      function imprimir(resultado) {
+        let p = document.createElement("p");
+        article.appendChild(p);
+        p.innerHTML = resultado;
+      }
+
+      function saludar (nombre, saludo="Hola"){
+        return saludo+", buenos dias "+nombre;
+    }
+
+    function calcular (num1, num2, operacion = "+"){
+        switch (operacion) {
+                default:
+                    return num1 + num2;
+                case "-":
+                    return num1 - num2;
+                case "x":
+                    return num1 * num2;
+                case "/":
+                    return num1 / num2;
+            }
+    }
+
+    function calcuarPromedio (){
+        let promedio = 0
+        let suma = 0
+        for (let index of arguments) {
+                      
+            if(!NaN){
+                suma += index;
+            }
+        }
+        promedio = suma / arguments.length;
+        return promedio;
+    }
+
+    function concatenarNombres() {
+            let cadena = "";
+            for (let index of arguments) {
+                if (typeof index == "string") {
+                    cadena += index;
+                }
+            }
+            return cadena.substring(0, cadena.length-2);
+        }
+
+        const vocales = ["a", "e", "i", "o", "u"];
+
+vocales.forEach(function (vocal, indice, arr) {
+console.log(`El valor del elemento en la posición ${indice} es ${vocal} del array que estamos recorriendo que es ${arr}`);
+});
+
+
+    </script>
+  </body>
+</html>
